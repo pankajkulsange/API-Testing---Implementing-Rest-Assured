@@ -1,3 +1,4 @@
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
@@ -12,5 +13,8 @@ public class RestAssuredAPITest {
 		System.out.println("Response Time: " + res.getTime());
 		System.out.println("Response Body: " + res.getBody().asString());
 		System.out.println("Status Line: " + res.getStatusLine());
+		
+		int actualRes = res.statusCode();
+		Assert.assertEquals(actualRes, 200);
 	}
 }
