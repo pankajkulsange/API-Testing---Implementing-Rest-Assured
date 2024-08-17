@@ -28,6 +28,7 @@ public class RestAssuredAPITest {
 		given().get("/users?page=2").
 		then().
 		statusCode(200).
-		body("data[2].id", equalTo(9));
+		body("data[2].id", equalTo(9)).
+		log().all();
 	}
 }
